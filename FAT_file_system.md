@@ -10,6 +10,7 @@
         提高存取效率，减轻管理压力
       </li>
     </ol>
+  <p></p>
     <p>主流的系统有NTFS、FAT、exFAT、EXT等，这里主要介绍FAT。</p>
   </li>
   <h1><li>
@@ -49,22 +50,211 @@
     <p>接着添加文件D，文件大小为<b style="color:red;">4簇</b>,超过了B原本位置的2簇，所以会优先填满2簇，再去寻找空余位置继续填充，如图：</p>
     <img src="FATfs_3.png" alt="check github.com/xjc147896325/Cross-hardware-recording">
   </li>
-  <li>
-    
+  <h1><li>
+    File Access（文件存取）接口：</h1>
+    <div><table>
+      <tr>
+        <td>f_open</td>
+        <td>打开/创建文件</td>
+      </tr>
+      <tr>
+        <td>f_close</td>
+        <td>关闭文件</td>
+      </tr>
+      <tr>
+        <td>f_read</td>
+        <td>读取文件</td>
+      </tr>
+      <tr>
+        <td>f_write</td>
+        <td>写入文件</td>
+      </tr>
+      <tr>
+        <td>f_lseek</td>
+        <td>移动读/写指针，扩展大小</td>
+      </tr>
+      <tr>
+        <td>f_truncate</td>
+        <td>截断文件</td>
+      </tr>
+      <tr>
+        <td>f_sync</td>
+        <td>刷新缓存数据</td>
+      </tr>
+      <tr>
+        <td>f_forward</td>
+        <td>转移文件数据到一个数据流</td>
+      </tr>
+      <tr>
+        <td>f_expand</td>
+        <td>为文件分配一个连续的块</td>
+      </tr>
+      <tr>
+        <td>f_gets</td>
+        <td>读取一个字符串（string）</td>
+      </tr>
+      <tr>
+        <td>f_putc</td>
+        <td>写入一个字符（character）</td>
+      </tr>
+      <tr>
+        <td>f_puts</td>
+        <td>写入一个字符串（string）</td>
+      </tr>
+      <tr>
+        <td>f_printf</td>
+        <td>写入一个格式化字符串</td>
+      </tr>
+      <tr>
+        <td>f_tell</td>
+        <td>获取当前读/写指针</td>
+      </tr>
+      <tr>
+        <td>f_eof</td>
+        <td>文件结束测试</td>
+      </tr>
+      <tr>
+        <td>f_size</td>
+        <td>获取长度</td>
+      </tr>
+      <tr>
+        <td>f_error</td>
+        <td>测试错误</td>
+      </tr>  
+    </table></div>
   </li>
-  <li>
-    
+  <h1><li>
+    Directory Access（目录访问）接口</h1>
+    <table>
+      <tr>
+        <td>f_opendir</td>
+        <td>打开一个目录</td>
+      </tr>
+      <tr>
+        <td>f_closedir</td>
+        <td>关闭一个已打开的目录</td>
+      </tr>
+      <tr>
+        <td>f_readdir</td>
+        <td>读取目录</td>
+      </tr>
+      <tr>
+        <td>f_findfirst</td>
+        <td>打开一个目录并读取匹配的第一个项目</td>
+      </tr>
+      <tr>
+        <td>f_findnext</td>
+        <td>查找下一个匹配的项目</td>
+      </tr>
+    </table>
   </li>
-  <li>
-    
+  <h1><li>
+    File and Dirextor Management（文件和目录管理）接口:</h1>
+    <table>
+      <tr> 
+        <td>f_stat</td>
+        <td>检查文件或子目录是否存在</td>
+      </tr>
+      <tr> 
+        <td>f_unlink</td>
+        <td>删除文件或子目录</td>
+      </tr>
+      <tr> 
+        <td>f_rename</td>
+        <td>重命名/移动文件或子目录</td>
+      </tr>
+      <tr> 
+        <td>f_chmod</td>
+        <td>更改文件或子目录的属性</td>
+      </tr>
+      <tr> 
+        <td>f_utime</td>
+        <td>更改文件或子目录的时间戳</td>
+      </tr>
+      <tr> 
+        <td>f_mkdir</td>
+        <td>创建子目录</td>
+      </tr>
+      <tr> 
+        <td>f_chdir</td>
+        <td>更改当前目录</td>
+      </tr>
+      <tr> 
+        <td>f_chdive</td>
+        <td>更改当前驱动</td>
+      </tr>
+      <tr> 
+        <td>f_getcwd</td>
+        <td>检索当前目录和驱动</td>
+      </tr>
+    </table>
   </li>
-  <li>
-    
+  <h1><li>
+    Volume Management and System Configuration（卷管理和系统配置）接口：</h1>
+    <table>
+      <tr>  
+        <td>f_mount</td>
+        <td>注册/注销一个工作区（挂起与否）</td>
+      </tr>
+      <tr>  
+        <td>f_mkfs</td>
+        <td>在逻辑驱动上创建一个FAT卷</td>
+      </tr>
+      <tr>  
+        <td>f_fdisk</td>
+        <td>在物理驱动上创建分区</td>
+      </tr>
+      <tr>  
+        <td>f_getfree</td>
+        <td>获取卷上的可用空间</td>
+      </tr>
+      <tr>  
+        <td>f_getlabel</td>
+        <td>获取卷标</td>
+      </tr>
+      <tr>  
+        <td>f_setlabel</td>
+        <td>设置卷标</td>
+      </tr>
+      <tr>  
+        <td>f_setcp</td>
+        <td>设置活动代码页</td>
+      </tr>
+    </table>
   </li>
-  <li>
-    
+  <h1><li>
+    Storage Device Controls（存储设备控件）接口：</h1>
+    <table>
+      <tr>
+        <td>disk_status</td>
+        <td>获取设备状态</td>
+      </tr>
+      <tr>
+        <td>disk_initialize</td>
+        <td>初始化设备</td>
+      </tr>
+      <tr>
+        <td>disk_read</td>
+        <td>读取数据</td>
+      </tr>
+      <tr>
+        <td>disk_write</td>
+        <td>写入数据</td>
+      </tr>
+      <tr>
+        <td>disk_ioctl</td>
+        <td>控制设备相关功能</td>
+      </tr>
+    </table>
   </li>
-  <li>
+  <h1><li>
+    Real Time Clock（实时时钟）接口：</h1>
+    <table>
+      <tr>
+        <td>get_fattime</td>
+        <td>获取当前时间</td>
+      </tr>
+    </table>
     
   </li>
   <li>
