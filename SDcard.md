@@ -42,7 +42,7 @@
   <hr>
 
   <p><img src="sd_card_rw.png" alt="check github.com/xjc147896325/Cross-hardware-recording"></p>
-  <p>这个图蛮详细的，我回头找下SD2.0的PDF附上。</p>
+  <p>这个图蛮详细的，<del><strike>我回头找下SD2.0的PDF附上。</strike></del><!-- 这里~与<del>都不好使，还是<strike>好用 --><a href="https://github.com/xjc147896325/Cross-hardware-recording/blob/main/SD2.0%E5%8D%8F%E8%AE%AE%E6%A0%87%E5%87%86%E5%AE%8C%E6%95%B4%E7%89%88.pdf" target="_blank">在这。</a></p>
   <p>在卡识别模式下发送<b style="color:red;">CMD3</b>，得到RCA地址，即可进入数据传输模式.(已初始化)</p>
   <p>在数据传输模式下：发送<b style="color:red;">CMD0</b>，卡会进入空闲状态，此时可重新初始化、识别。发送<b style="color:red;">CMD3</b>返回新的RCA地址。发送<b style="color:red;">CMD15</b>，卡进入无效状态，类似于umount，需重新上电才能工作。</p>
   <h2>卡识别模式(时钟频率为FOD，最高为400k)：</h2>
