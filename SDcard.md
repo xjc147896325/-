@@ -40,3 +40,14 @@
   <p><a href="https://www.cnblogs.com/PureHeart/p/12015635.html" target="_blank">这是老哥的blog，一起参考</a>，这个markdown就是根据博客为起点的。</p>
     
   <hr>
+
+  <p><img src="sd_card_rw.png" alt="check github.com/xjc147896325/Cross-hardware-recording"></p>
+  <p>这个图蛮详细的，我回头找下SD2.0的PDF附上。</p>
+  <p>在卡识别模式下发送<b style="color:red;">CMD3</b>，得到RCA地址，即可进入数据传输模式.(已初始化)</p>
+  <p>在数据传输模式下：发送<b style="color:red;">CMD0</b>，卡会进入空闲状态，此时可重新初始化、识别。发送<b style="color:red;">CMD3</b>返回新的RCA地址。发送<b style="color:red;">CMD15</b>，卡进入无效状态，类似于umount，需重新上电才能工作。</p>
+  <h2>卡识别模式(时钟频率为FOD，最高为400k)：</h2>
+  <p><img src="card_identify_mode.png" alt="check github.com/xjc147896325/Cross-hardware-recording"></p>
+  <p>与上方流程一样，只是更为详细。</p>
+  <h2>数据传输模式：(时钟频率为FPP，默认25M，最高50M)</h2>
+  <p><img src="data_translation_mode.png" alt="check github.com/xjc147896325/Cross-hardware-recording"></p>
+  <hr>
