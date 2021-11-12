@@ -29,6 +29,11 @@
   <p><b>SSR</b>：SD状态寄存器，SD卡专有的特征信息</p>
   <p><b>CSR</b>：SD卡状态寄存器，SD卡的状态信息</p>
   
+  <hr>
+  
   <p>在SDIO中，存在发送命令的CMD线与数据传输的DAT线。正常情况主机通过CMD发送命令后，SD卡可能会CMD响应，可能会DAT响应，可能主机可以继续发送DAT</p>
   <p>不论命令还是响应，其起始位一定为0，终值为一定为1，传输标志在命令时为1，响应时为0，以此区分两者。</p>
   <p>其整体数据包为：1位起始位，1位传输标志，7位CRC校验，1位结束位，共10bit。总长为48、136和38，其中48bit和136bit的除开那10位均为内容，但38bit的为6bit命令+32bit参数/地址信息的形式 </p>
+  <p>CMD主要分为2种，<b style="color:red;">特定应用命令(ACMD)</b>和<b style="color:red;">常规命令(GEN_CMD)</b>也就是CMD</p>
+  <p>使用SD卡制造商特定的命令则需要先发送CMD55，类似符复合命令。除了CMD外<b style="color:red;">resp是响应</b>，同样分为<b style="color:red;">R1~R7</b>，只有R2为长响应，没有R4、R5响应。</p>
+  <p><a href="https://github.com/xjc147896325/Cross-hardware-recording/blob/main/SD_command%20and%20register%20list.pdf" target="_blank">这是找到的09年的一份表格，可能比较陈旧，仅供参考</p>
