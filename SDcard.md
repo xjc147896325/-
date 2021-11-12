@@ -36,4 +36,7 @@
   <p>其整体数据包为：1位起始位，1位传输标志，7位CRC校验，1位结束位，共10bit。总长为48、136和38，其中48bit和136bit的除开那10位均为内容，但38bit的为6bit命令+32bit参数/地址信息的形式 </p>
   <p>CMD主要分为2种，<b style="color:red;">特定应用命令(ACMD)</b>和<b style="color:red;">常规命令(GEN_CMD)</b>也就是CMD</p>
   <p>使用SD卡制造商特定的命令则需要先发送CMD55，类似符复合命令。除了CMD外<b style="color:red;">resp是响应</b>，同样分为<b style="color:red;">R1~R7</b>，只有R2为长响应，没有R4、R5响应。</p>
-  <p><a href="https://github.com/xjc147896325/Cross-hardware-recording/blob/main/SD_command%20and%20register%20list.pdf" target="_blank">这是找到的09年的一份表格，可能比较陈旧，仅供参考</p>
+  <p><a href="https://github.com/xjc147896325/Cross-hardware-recording/blob/main/SD_command%20and%20register%20list.pdf" target="_blank">这是找到的09年的一份表格，可能比较陈旧，仅供参考</a></p>
+  <p><a href="https://www.cnblogs.com/PureHeart/p/12015635.html" target="_blank">这是老哥的blog，一起参考</a>，这个markdown就是根据博客为起点的。</p>
+    
+  <hr>
