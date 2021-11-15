@@ -257,10 +257,31 @@
     </table>
     
   </li>
-  <li>
-    
+  <h1><li>
+    宏与相关接口函数的实现：</h1>
+    <dl>
+      <dt>1.不管任何时候（Always）</dt>
+      <dd>需要实现三个函数：状态（disk_status）、初始化（disk_initialize）和读取（disk_read）</dd>
+      <dt>2.如果只读 == 0（FF_FS_READONLY == 0）（0为否，意思就是：只读 == 否）</dt>
+      <dd>要实现三个函数：写入（disk_write）、读取当前时间（get_fattime）、disk_ioctl（CTRL_SYNC，确保设备已完成挂起）</dd>
+      <dt>3.如果需要格式化的功能（FF_USD_MKFS == 1）</dt>
+      <dd>需要实现disk_ioctl（GET_SECTOR_COUNT，检测可用扇区）、disk_ioctl（GET_BLOCK_SIZE，检测块的大小）</dd>
+      <dt>4.如果扇区扇区大小不同（FF_MAX_SS  != FF_MIN_SS）</dt>
+      <dd>需要实现disk_ioctl（GET_SECTOR_SIZE）</dd>
+      <dt>5.如果要擦除扇区上不需要的数据（FF_USE_TRIM == 1）</dt>
+      <dd>需要实现disk_ioctl（CTRL_TRIM）</dd>
+      <dt>6.如果需要长文件名（FF_USE_LFN != 0）</dt>
+      <dd>需要实现三个函数，ff_uni2oem、ff_oem2uni、ff_wtoupper</dd>
+      <dt>7.如果需要重入功能（FF_FS_REENTRANT  == 1）</dt>
+      <dd>需要实现ff_cre_syncobj、ff_del_syncobj、ff_req_grant、ff_rel_grant</dd>
+      <dt>8.如果设定长文件名时，宏定义设置3（FF_USE_LFN == 3）</dt>
+      <dd>还需要实现额外两个函数，ff_mem_alloc、ff_mem_free</dd>
+    </dl>
+        
   </li>
-  <li>
-    
+  <h1><li>
+    上板调试：</h1>
+    <p><b style="color:red;">注意：</b>在使用文件管理之前，你应该要保证和你连接的设备，所有你用到的功能都是过了的。</p>
+    <p>SD卡、基础函数例如初始化、读、写等，全部实现后才能开始着手移植FATfs，因为在diskio.c中，需要提供api</p>
   </li>
 </ol>
