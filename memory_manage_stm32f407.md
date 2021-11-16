@@ -12,11 +12,12 @@
   </li>
 </ol>
 <p>在使用SD卡时，内存管理机制也十分重要，因为若用二维数组(一个维度表示文件数量，一个维度表示文件名)，会占用很大的空间，不便使用。下图是F407的选型。</p>
-<img src='https://github.com/xjc147896325/Cross-hardware-recording/F407_3.png'>
-<img src='https://github.com/xjc147896325/Cross-hardware-recording/F407_2.png'>
-<img src='https://github.com/xjc147896325/Cross-hardware-recording/F407_1.png'>
-<p></p>
-<p></p>
+<img src='https://github.com/xjc147896325/Cross-hardware-recording/blob/main/F407_3.png'>
+<img src='https://github.com/xjc147896325/Cross-hardware-recording/blob/main/F407_2.png'>
+<img src='https://github.com/xjc147896325/Cross-hardware-recording/blob/main/F407_1.png'>
+<p>能看到RAM只有192K，IC内部共有3个内存块，分别为SRAM1、SRAM2和CCM。</p>
+<p>CCM（core coupled memory）（核心耦合存储器）：理论上是最快的，但是它只能被CPU访问，像其他外设（DMA、以太、USB），都无法访问</p>
+<img src='https://github.com/xjc147896325/Cross-hardware-recording/blob/main/memories_f407.png'>
 <p></p>
 <p></p>
 <p></p>
