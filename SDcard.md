@@ -1,6 +1,6 @@
 <h5>先是sd卡相关知识嗷:</h5>
   <p>首先，SD卡拓展了个SDIO协议(Secure Digital Input and Output)这个协议属于外部接口，可以拓展外设，相机、条码啥的。但是：<b style="color:red;">STM32F4系列，只支持SD2.0的协议，不支持一部分SDHC卡</b>SD和SDHC属于2.0这个范畴，SDXC是4.0协议，所以不支持。另外SDHC卡，有些数据块大小是512，有的是1024，STM32F4只支持读取512大小的。</p>
-  <p>同时，支持2种读写模式：,b>SPI Mode</b> & <b>SDIO Mode</b>。两种模式的特性如下：</p>
+  <p>同时，支持2种读写模式：,<b>SPI Mode</b> & <b>SDIO Mode</b>。两种模式的特性如下：</p>
   <pre>
 【SDIO模式】
   CLK：时钟，通信过程需要的东西，没这个东西，数据会不稳定
