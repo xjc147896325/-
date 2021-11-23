@@ -57,7 +57,7 @@
     <a href='https://zhuanlan.zhihu.com/p/108182171' target="_blank">参考这里，主要用在FSK中，用来抗干扰。（spread-spectrum）</a>
     <p>顺带一提，链路层状态机有5态：就绪态，扫描态，广播台，连接态，发起态</p>
     <p>一个概念：<a href='https://baike.baidu.hk/item/%E7%94%9F%E6%88%90%E5%A4%9A%E9%A0%85%E5%BC%8F/22222428' target="_blank">生成多项式</a>,以及<a href='https://blog.csdn.net/ywb201314/article/details/52084281' target="_blank">在CRC中的应用</a></p>
-    <p></p>
+    <p>7.7.3发送窗口，错别字，发送————>发射</p>
     <p></p>
     <p></p>
     <p></p>
