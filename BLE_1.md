@@ -66,7 +66,7 @@
   <h1><li>
     链路层概念：滑动窗口</h1>
     <p> <a href='https://baike.baidu.hk/item/%E6%BB%91%E5%8B%95%E7%AA%97%E5%8F%A3/8351795' target="_blank">百度百科。</a></p>
-    <p> <a href='https://www.cnblogs.com/huansky/p/13488234.html' target="_blank">算法实现。（spread-spectrum）</a></p>
+    <p> <a href='https://www.cnblogs.com/huansky/p/13488234.html' target="_blank">算法实现。</a></p>
     <p></p>
     <p></p>
     <p></p>
